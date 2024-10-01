@@ -1,16 +1,15 @@
-package example;
-
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import pages.RegistrationPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 
-public class RegistrationTest {
+
+public class RegistrationTest extends BaseTest {
     private RegistrationPage registrationPage;
 
-    @BeforeMethod
+    @BeforeEach
     public void setUp() {
         open("https://example.com/registration");
         registrationPage = page(RegistrationPage.class);
